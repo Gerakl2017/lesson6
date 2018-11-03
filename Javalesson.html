@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      body{
+          background-color: blueviolet;
+          }
+          .mem1{
+              height: 200px;
+              width: 300px;
+              position: relative;
+                }
+            input{display: inline-block;}
+            .spisok{
+                border: 2px red outset;
+                background-color: antiquewhite;
+                display: inline-block;
+                padding: 10px;
+            }
+            #tom{
+                position: relative;
+            }
+          </style>
+</head>
+<body>
+    <input type="button" value="lol, chisto baton" onclick="alert('normalbno ti na knopku nazhal, zemlya tebe puhom');">
+    <div onclick="alert('A teper' idi otsuda')">
+       <img class="mem1" src="мем-джерри.jpg" onclick="alert('normalbno'); boi();">
+     </div>
+     <input type="button" value="Babloschet" onclick="countingzp();">
+
+     <div class="spisok">
+         <input type="button" value="del" onclick="delProduct();">
+         <input type="button" value="add" onclick="addProduct();">
+         <input type="button" value="changecolor" onclick="change();">
+        <ol>
+         <li>Hleb</li>
+         <li>Ne ya</li>
+         <li>Ne esh'</li>
+         <li>Podumoi</li>
+        </ol>
+     </div>
+      <h1 id="title">Delited</h1>
+      <ul id ='list'></ul>
+
+
+      <img src="tom-mem.png" id="tom">
+
+    <script>
+        setTimeout("sayHello(); 2000")
+          function sayHello(){
+              var name = prompt("Da fuq yo nam?");
+              alert("Davo ne videl na ulichnih gonkah  " + name);
+          }
+
+        function boi(){
+          alert("He he boi");
+          window.open("https://www.google.ru/search?q=he+he+boi&newwindow=1&rlz=1C1CHBD_ruRU807RU808&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiNyqHwzrjeAhVilosKHUGpCGAQ_AUIDigB&biw=1536&bih=706")
+        }
+        function delProduct(){
+            var delnum = prompt("Delete something from spisok");
+            var ol = document.getElementsByTagName("ol")[0]
+            var delelem = ol.removeChild(ol.lastElementChild);
+            var ul = document.getElementById("list");
+            ul.appendChild("delited");
+        }
+        function addProduct(){
+            var product = prompt();
+            var ol = document.getElementsByTagName("ol")[0];
+            var new_product = document.createElement("li");
+            new_product.innerHTML = product;
+            ol.appendChild(new_product);
+        }
+        function change(){
+            var h = document.getElementById("title");
+            h.style.color = "red";
+            h.style.fontSize ="50px";
+        }
+          /*sayHello();
+          sayHello();*/
+           /*var area =5000;
+
+          function square_area(side){
+              alert(area);
+              var area = side*side;
+              alert(area);
+              return(area);
+          }
+
+          var area_10 = square_area(10);
+          alert(area);*/
+
+          function countingzp(){
+            var oklad = prompt("Enter your zarplata (RUB)")
+                if(oklad>10000){var itog = oklad-(oklad/100*35)
+                            alert(itog);}
+                if(oklad<10000){var itog = oklad-(oklad/100*25)
+                            alert(itog);}
+          }
+          var timer = setInterval("move();", 15)
+          var position = 0;
+          function move(){
+              var img = document.getElementById("tom");
+              position =position + 5;
+              img.style.left = position + "px";
+
+              if(position>document.documentElement.clientWidth){
+                  position = 0;
+              }
+          }
+
+
+    </script>
+    
+</body>
+</html>
